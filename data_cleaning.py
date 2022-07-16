@@ -16,7 +16,7 @@ from nltk.stem import PorterStemmer, WordNetLemmatizer
 class data_cleaning_jobpost:
 
     ## INITIALIZE INPUTS AND VARS
-    def __init__(self,*,sample_text):
+    def __init__(self,*,sample_text, nlp):
         self.sample_text = sample_text.lower()
 
         self.special_cases = {"tf-idf": [{"ORTH": "tf-idf"}], "t-sne": [{"ORTH": "t-sne"}], "d3.js": [{"ORTH": "d3.js"}],
@@ -35,7 +35,8 @@ class data_cleaning_jobpost:
         self.special_character_remover = re.compile('[/(){}\[\]\|@,;_]')
         self.extra_symbol_remover = re.compile('[^0-9a-z #+_]')
         self.STOPWORDS = set(stopwords.words('english'))
-        self.nlp = spacy.load("en_core_web_sm")
+        self.nlp = nlp
+        
 
 
     ## INITIALIZE SUB FUNCTIONS

@@ -20,7 +20,6 @@ from spacy.tokenizer import Tokenizer
 from spacy.symbols import ORTH
 
 from collections import defaultdict, Counter
-from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 
 import joblib
@@ -53,10 +52,11 @@ if my_page == 'eskweJOBS Finder':
     st.image(image)
 
     input_text = st.text_area('Write your skills and competencies below.', help='You can copy and paste relevant parts of your resume.')
+    nlp = spacy.load('en_core_web_sm')
 
     if st.button("Get my results!"):
 
-        clean_data = data_cleaning_jobpost(sample_text=input_text)
+        clean_data = data_cleaning_jobpost(sample_text=input_text, nlp=nlp)
         clean_text = clean_data.generate_clean_text()
         # st.write(clean_desc) ### cleaned description
 
