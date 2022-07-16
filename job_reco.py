@@ -52,7 +52,13 @@ if my_page == 'eskweJOBS Finder':
     st.image(image)
 
     input_text = st.text_area('Write your skills and competencies below.', help='You can copy and paste relevant parts of your resume.')
-    nlp = spacy.load('en_core_web_md')
+    # nlp = spacy.load('en_core_web_md')
+
+    try:
+        nlp = spacy.load("en_core_web_sm")
+    except: # If not present, we download
+        spacy.cli.download("en_core_web_sm")
+        nlp = spacy.load("en_core_web_sm")
 
     if st.button("Get my results!"):
 
