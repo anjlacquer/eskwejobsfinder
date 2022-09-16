@@ -12,7 +12,7 @@ import unicodedata
 import wordninja
 
 from collections import defaultdict, Counter
-# from nltk.corpus import stopwords
+from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 
 class data_cleaning_jobpost:
