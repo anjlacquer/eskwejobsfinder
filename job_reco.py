@@ -145,9 +145,9 @@ if my_page == 'eskweJOBS Finder':
             st.markdown("""**(1) Advanced Machine Learning |** Experienced data scientists needed to provide machine learning solutions to the company. Requires skills in project management and working in teams. Proficiency in Machine Learning and Python. """)
             st.markdown("""**(2) Machine Learning (General) |** Build ML models to provide solutions on business processes and/or customer relationships. Must be knowledegable in different tools and complex analysis. Willing to work in teams. """)
             st.markdown("""**(3) Data Science as a Service (DSaaS) |** Skilled in drawing insights from advanced analytics for client needs. Knowledgeable in statistics and insighting.""")
-            with c1:
-                image1 = Image.open('img/man2.png')
-                st.image(image1)
+        with c1:
+            image1 = Image.open('img/man2.png')
+            st.image(image1)
         # st.markdown("---")
         # if y_pred2[0] == 'data analyst':
         #     c1, c2 = st.columns((1, 1))
