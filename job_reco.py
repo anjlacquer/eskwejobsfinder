@@ -15,9 +15,9 @@ import nltk
 import numpy as np
 import pandas as pd
 import re
-import spacy
-from spacy.tokenizer import Tokenizer
-from spacy.symbols import ORTH
+# import spacy
+# from spacy.tokenizer import Tokenizer
+# from spacy.symbols import ORTH
 
 from collections import defaultdict, Counter
 from nltk.stem import PorterStemmer, WordNetLemmatizer
