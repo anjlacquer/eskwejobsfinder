@@ -54,64 +54,66 @@ if my_page == 'eskweJOBS Finder':
     input_text = st.text_area('Write your skills and competencies below.', help='You can copy and paste relevant parts of your resume.')
     # nlp = spacy.load('en_core_web_md')
 
-    try:
-        nlp = spacy.load("en_core_web_sm")
-    except: # If not present, we download
-        spacy.cli.download("en_core_web_sm")
-        nlp = spacy.load("en_core_web_sm")
+    # try:
+    #     nlp = spacy.load("en_core_web_sm")
+    # except: # If not present, we download
+    #     spacy.cli.download("en_core_web_sm")
+    #     nlp = spacy.load("en_core_web_sm")
 
     if st.button("Get my results!"):
 
-        clean_data = data_cleaning_jobpost(sample_text=input_text, nlp=nlp)
-        clean_text = clean_data.generate_clean_text()
-        # st.write(clean_desc) ### cleaned description
+        st.write("Out of Order -_-")
 
-        vocab_tf = joblib.load('tfidf_vocab_streamlit.pkl')
-        loaded_model = joblib.load('sgd_model.sav')
-        tf = TfidfVectorizer(stop_words = "english", lowercase = True, max_features = 500000, vocabulary = vocab_tf)
+        # clean_data = data_cleaning_jobpost(sample_text=input_text, nlp=nlp)
+        # clean_text = clean_data.generate_clean_text()
+        # # st.write(clean_desc) ### cleaned description
 
-        model_input = tf.fit_transform([clean_text])
-        y_pred2 = loaded_model.predict(model_input)
+        # vocab_tf = joblib.load('tfidf_vocab_streamlit.pkl')
+        # loaded_model = joblib.load('sgd_model.sav')
+        # tf = TfidfVectorizer(stop_words = "english", lowercase = True, max_features = 500000, vocabulary = vocab_tf)
 
-        def get_specialization(input_text, position):
+        # model_input = tf.fit_transform([clean_text])
+        # y_pred2 = loaded_model.predict(model_input)
+
+        # def get_specialization(input_text, position):
         
-            df = pd.read_csv('data/cleaned-data.csv')
+        #     df = pd.read_csv('data/cleaned-data.csv')
             
-            df_ = df[df['position'] != 'multiple']
+        #     df_ = df[df['position'] != 'multiple']
             
-            corpus = df_['clean_desc'].values.tolist()
-            corpus.append(input_text)
+        #     corpus = df_['clean_desc'].values.tolist()
+        #     corpus.append(input_text)
 
-            tfidf_vectorizer = TfidfVectorizer()
-            tfidf_matrix = tfidf_vectorizer.fit_transform(corpus)
+        #     tfidf_vectorizer = TfidfVectorizer()
+        #     tfidf_matrix = tfidf_vectorizer.fit_transform(corpus)
 
-            cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
+        #     cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
 
-            text_sim = cosine_sim[len(df_)][:len(df_)] # get similarities of input with others and then remove the similarity with itself
-            cos_sim = pd.DataFrame({'cosine_sim': text_sim})
+        #     text_sim = cosine_sim[len(df_)][:len(df_)] # get similarities of input with others and then remove the similarity with itself
+        #     cos_sim = pd.DataFrame({'cosine_sim': text_sim})
             
-            df_cos = df_.join(cos_sim)
-            df_cos = df_cos[['position','specialization', 'cosine_sim']]
+        #     df_cos = df_.join(cos_sim)
+        #     df_cos = df_cos[['position','specialization', 'cosine_sim']]
             
-            result = df_cos.sort_values(by=["cosine_sim"], ascending = False)
-            result = result[result['position'] == position][['specialization', 'cosine_sim']].drop_duplicates(['specialization'])
+        #     result = df_cos.sort_values(by=["cosine_sim"], ascending = False)
+        #     result = result[result['position'] == position][['specialization', 'cosine_sim']].drop_duplicates(['specialization'])
             
-            pos_ = result['specialization'].values.tolist()
-            sim_ = result['cosine_sim'].values.tolist()
+        #     pos_ = result['specialization'].values.tolist()
+        #     sim_ = result['cosine_sim'].values.tolist()
             
-            arr = []
-            for i in range(len(pos_)):
-                _pos = pos_[i]
-                _sim = sim_[i]
+        #     arr = []
+        #     for i in range(len(pos_)):
+        #         _pos = pos_[i]
+        #         _sim = sim_[i]
                 
-                if i == (len(pos_)-1):
-                    sent = _pos + ' (' + str(np.round(_sim, 2)) + ')'
-                else:
-                    sent = _pos + ' (' + str(np.round(_sim, 2)) + ')' + ','
-                arr.append(sent)
+        #         if i == (len(pos_)-1):
+        #             sent = _pos + ' (' + str(np.round(_sim, 2)) + ')'
+        #         else:
+        #             sent = _pos + ' (' + str(np.round(_sim, 2)) + ')' + ','
+        #         arr.append(sent)
             
-            sentence = " ".join(arr)
-            return sentence 
+        #     sentence = " ".join(arr)
+        #     return sentence 
         
         st.markdown("---")
         st.subheader("These are the specializations you may consider and their similarity scores:")
