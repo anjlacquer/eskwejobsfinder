@@ -117,7 +117,7 @@ if my_page == 'eskweJOBS Finder':
         
         st.markdown("---")
         st.subheader("These are the specializations you may consider and their similarity scores:")
-        c1, c2 = st.columns((4, 1))
+        c1, c2 = st.columns((.25, 1))
         # st.info(get_specialization(clean_text, y_pred2[0])) 
         # st.caption("How to read the results: Results are ranked by level of similarity. The higher the similarity score, the closer your current skills are to the specialization's requirements. \nThe specializations were derived from analyzing recent job post requirements for data positions.")
         with c2:
