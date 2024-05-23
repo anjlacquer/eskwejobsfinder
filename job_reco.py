@@ -62,7 +62,7 @@ if my_page == 'eskweJOBS Finder':
 
     if st.button("Get my results!"):
 
-        st.write("Out of Order -_-")
+        st.write("This app is currently out of order.")
 
         # clean_data = data_cleaning_jobpost(sample_text=input_text, nlp=nlp)
         # clean_text = clean_data.generate_clean_text()
@@ -117,8 +117,19 @@ if my_page == 'eskweJOBS Finder':
         
         st.markdown("---")
         st.subheader("These are the specializations you may consider and their similarity scores:")
-        st.info(get_specialization(clean_text, y_pred2[0])) 
-        st.caption("How to read the results: Results are ranked by level of similarity. The higher the similarity score, the closer your current skills are to the specialization's requirements. \nThe specializations were derived from analyzing recent job post requirements for data positions.")
+        # st.info(get_specialization(clean_text, y_pred2[0])) 
+        # st.caption("How to read the results: Results are ranked by level of similarity. The higher the similarity score, the closer your current skills are to the specialization's requirements. \nThe specializations were derived from analyzing recent job post requirements for data positions.")
+
+        st.subheader("Data Analyst: Topics to explore:")
+        st.markdown("""**(1) Data Analyst (General) |** Support company through data analysis of business operations. Regularly analyze, prepare reports, and provide solutions based on data. Knowledgeable in project management and working with teams.""")
+        st.markdown("""**(2) Expert Finance Analyst |** Skilled data analyst for the finance industry. Knowledgeable in Finance and/or Accounting. Preferrably with Masters. Proficient in Excel. Fluency in Mandarin. """)
+        st.markdown("""**(3) Customer Segmentation |** Analysis of customers through data modelling. Proficiency in Power BI.""")
+        st.markdown("""**(4) Thai Data Analyst - Remote Work |** Work remotely as a data analyst for Thailand accounts. Proficiency in English. Communication through Skype.""")
+        st.markdown("""**(5) Insurance Industry |** Help team needs on risk analysis Skilled in research and analysis.""")
+        st.markdown("""**(6) Fraud Analysis in Food Deliveries |** Detect fraud analysis in a food delivery company """)
+        st.markdown("""**(7) University & Education |** Data analysis for the education industry. Knowlegdeable in higher education industry (quality, standards, accreditation, compliance, mapping trends) . Managerial role. """)
+        st.markdown("""**(8) Data Analytics as a Service - BPO |** Recruitment for BPOs offering Data Analytics as a Service. Skilled in data visualization.""")
+        st.markdown("""**(9) Foreign Languages |** Proficiency in Japanese""")
 
         st.markdown("---")
         if y_pred2[0] == 'data analyst':
