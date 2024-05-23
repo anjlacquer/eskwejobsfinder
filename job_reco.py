@@ -26,7 +26,7 @@ import joblib
 from sklearn.metrics.pairwise import cosine_similarity
 
 # created python script for data cleaning in streamlit
-from data_cleaning import data_cleaning_jobpost
+# from data_cleaning import data_cleaning_jobpost
 
 # def load_model(fname):
 #     """
