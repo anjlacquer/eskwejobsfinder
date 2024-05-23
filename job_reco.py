@@ -117,7 +117,7 @@ if my_page == 'eskweJOBS Finder':
         
         st.markdown("---")
         image1 = Image.open('img/man2.png')
-        st.image(image)
+        st.image(image1)
         
         st.markdown("---")
         st.subheader("These are the specializations you may consider and their similarity scores:")
