@@ -116,6 +116,10 @@ if my_page == 'eskweJOBS Finder':
         #     return sentence 
         
         st.markdown("---")
+        image1 = Image.open('img/man2.png')
+        st.image(image)
+        
+        st.markdown("---")
         st.subheader("These are the specializations you may consider and their similarity scores:")
         # st.info(get_specialization(clean_text, y_pred2[0])) 
         # st.caption("How to read the results: Results are ranked by level of similarity. The higher the similarity score, the closer your current skills are to the specialization's requirements. \nThe specializations were derived from analyzing recent job post requirements for data positions.")
@@ -132,54 +136,68 @@ if my_page == 'eskweJOBS Finder':
         st.markdown("""**(9) Foreign Languages |** Proficiency in Japanese""")
 
         st.markdown("---")
-        if y_pred2[0] == 'data analyst':
-            c1, c2 = st.columns((1, 1))
+        st.subheader("Data Engineer: Topics to explore:")
+        st.markdown("""**(1) Experienced Data Engineer (General) |** Requires skills in project management and general data engineering skills. Knowledgeable on how to apply data engineering for business solutions. """)
+        st.markdown("""**(2) Experienced Cloud Engineer |**   Build data pipelines and databases. Proficiency in cloud storage for business optimization.""")
+        st.markdown("""**(3) Data Engineering Lead On-Site |** Experienced data engineers needed to lead on-site. Communicates with stakeholders and responsible for company's data engineering maintenance, tools, and assets. Proficiency in leadership (team management, communication, project management, business)""")
+        st.markdown("""**(4) Pioneer Team in Company |**  Needs experienced data engineers to introduce ETL in business. Offers an opportunity to grow with the company. Proficiency in Python""")
+        st.markdown("""**(5) Cloud Architect |** Design company's cloud system (data pipelines & databases). Highly skilled in cloud technology development. Proficiency in Azure, SQL, and Python.""")
 
-            with c2:
-                st.subheader("Topics to explore:")
-                st.markdown("""**(1) Data Analyst (General) |** Support company through data analysis of business operations. Regularly analyze, prepare reports, and provide solutions based on data. Knowledgeable in project management and working with teams.""")
-                st.markdown("""**(2) Expert Finance Analyst |** Skilled data analyst for the finance industry. Knowledgeable in Finance and/or Accounting. Preferrably with Masters. Proficient in Excel. Fluency in Mandarin. """)
-                st.markdown("""**(3) Customer Segmentation |** Analysis of customers through data modelling. Proficiency in Power BI.""")
-                st.markdown("""**(4) Thai Data Analyst - Remote Work |** Work remotely as a data analyst for Thailand accounts. Proficiency in English. Communication through Skype.""")
-                st.markdown("""**(5) Insurance Industry |** Help team needs on risk analysis Skilled in research and analysis.""")
-                st.markdown("""**(6) Fraud Analysis in Food Deliveries |** Detect fraud analysis in a food delivery company """)
-                st.markdown("""**(7) University & Education |** Data analysis for the education industry. Knowlegdeable in higher education industry (quality, standards, accreditation, compliance, mapping trends) . Managerial role. """)
-                st.markdown("""**(8) Data Analytics as a Service - BPO |** Recruitment for BPOs offering Data Analytics as a Service. Skilled in data visualization.""")
-                st.markdown("""**(9) Foreign Languages |** Proficiency in Japanese""")
+        st.markdown("---")
+        st.subheader("Data Scientist:Topics to explore:")
+        st.markdown("""**(1) Advanced Machine Learning |** Experienced data scientists needed to provide machine learning solutions to the company. Requires skills in project management and working in teams. Proficiency in Machine Learning and Python. """)
+        st.markdown("""**(2) Machine Learning (General) |** Build ML models to provide solutions on business processes and/or customer relationships. Must be knowledegable in different tools and complex analysis. Willing to work in teams. """)
+        st.markdown("""**(3) Data Science as a Service (DSaaS) |** Skilled in drawing insights from advanced analytics for client needs. Knowledgeable in statistics and insighting.""")
+
+        # st.markdown("---")
+        # if y_pred2[0] == 'data analyst':
+        #     c1, c2 = st.columns((1, 1))
+
+        #     with c2:
+        #         st.subheader("Topics to explore:")
+        #         st.markdown("""**(1) Data Analyst (General) |** Support company through data analysis of business operations. Regularly analyze, prepare reports, and provide solutions based on data. Knowledgeable in project management and working with teams.""")
+        #         st.markdown("""**(2) Expert Finance Analyst |** Skilled data analyst for the finance industry. Knowledgeable in Finance and/or Accounting. Preferrably with Masters. Proficient in Excel. Fluency in Mandarin. """)
+        #         st.markdown("""**(3) Customer Segmentation |** Analysis of customers through data modelling. Proficiency in Power BI.""")
+        #         st.markdown("""**(4) Thai Data Analyst - Remote Work |** Work remotely as a data analyst for Thailand accounts. Proficiency in English. Communication through Skype.""")
+        #         st.markdown("""**(5) Insurance Industry |** Help team needs on risk analysis Skilled in research and analysis.""")
+        #         st.markdown("""**(6) Fraud Analysis in Food Deliveries |** Detect fraud analysis in a food delivery company """)
+        #         st.markdown("""**(7) University & Education |** Data analysis for the education industry. Knowlegdeable in higher education industry (quality, standards, accreditation, compliance, mapping trends) . Managerial role. """)
+        #         st.markdown("""**(8) Data Analytics as a Service - BPO |** Recruitment for BPOs offering Data Analytics as a Service. Skilled in data visualization.""")
+        #         st.markdown("""**(9) Foreign Languages |** Proficiency in Japanese""")
             
-            with c1:
-                image = Image.open('img/man2.png')
-                st.image(image)
+        #     with c1:
+        #         image1 = Image.open('img/man2.png')
+        #         st.image(image)
 
-        elif y_pred2[0] == 'data engineer':
+        # elif y_pred2[0] == 'data engineer':
 
-            c1, c2 = st.columns((1, 1))
+        #     c1, c2 = st.columns((1, 1))
 
-            with c2:
-                st.subheader("Topics to explore:")
-                st.markdown("""**(1) Experienced Data Engineer (General) |** Requires skills in project management and general data engineering skills. Knowledgeable on how to apply data engineering for business solutions. """)
-                st.markdown("""**(2) Experienced Cloud Engineer |**   Build data pipelines and databases. Proficiency in cloud storage for business optimization.""")
-                st.markdown("""**(3) Data Engineering Lead On-Site |** Experienced data engineers needed to lead on-site. Communicates with stakeholders and responsible for company's data engineering maintenance, tools, and assets. Proficiency in leadership (team management, communication, project management, business)""")
-                st.markdown("""**(4) Pioneer Team in Company |**  Needs experienced data engineers to introduce ETL in business. Offers an opportunity to grow with the company. Proficiency in Python""")
-                st.markdown("""**(5) Cloud Architect |** Design company's cloud system (data pipelines & databases). Highly skilled in cloud technology development. Proficiency in Azure, SQL, and Python.""")
+        #     with c2:
+        #         st.subheader("Topics to explore:")
+        #         st.markdown("""**(1) Experienced Data Engineer (General) |** Requires skills in project management and general data engineering skills. Knowledgeable on how to apply data engineering for business solutions. """)
+        #         st.markdown("""**(2) Experienced Cloud Engineer |**   Build data pipelines and databases. Proficiency in cloud storage for business optimization.""")
+        #         st.markdown("""**(3) Data Engineering Lead On-Site |** Experienced data engineers needed to lead on-site. Communicates with stakeholders and responsible for company's data engineering maintenance, tools, and assets. Proficiency in leadership (team management, communication, project management, business)""")
+        #         st.markdown("""**(4) Pioneer Team in Company |**  Needs experienced data engineers to introduce ETL in business. Offers an opportunity to grow with the company. Proficiency in Python""")
+        #         st.markdown("""**(5) Cloud Architect |** Design company's cloud system (data pipelines & databases). Highly skilled in cloud technology development. Proficiency in Azure, SQL, and Python.""")
             
-            with c1:
-                image = Image.open('img/man2.png')
-                st.image(image)
+        #     with c1:
+        #         image = Image.open('img/man2.png')
+        #         st.image(image)
 
 
-        elif y_pred2[0] == 'data scientist':
+        # elif y_pred2[0] == 'data scientist':
 
-            c1, c2 = st.columns((1, 1))
+        #     c1, c2 = st.columns((1, 1))
 
-            with c2:
-                st.subheader("Topics to explore:")
-                st.markdown("""**(1) Advanced Machine Learning |** Experienced data scientists needed to provide machine learning solutions to the company. Requires skills in project management and working in teams. Proficiency in Machine Learning and Python. """)
-                st.markdown("""**(2) Machine Learning (General) |** Build ML models to provide solutions on business processes and/or customer relationships. Must be knowledegable in different tools and complex analysis. Willing to work in teams. """)
-                st.markdown("""**(3) Data Science as a Service (DSaaS) |** Skilled in drawing insights from advanced analytics for client needs. Knowledgeable in statistics and insighting.""")
-            with c1:
-                image = Image.open('img/man2.png')
-                st.image(image)
+        #     with c2:
+        #         st.subheader("Topics to explore:")
+        #         st.markdown("""**(1) Advanced Machine Learning |** Experienced data scientists needed to provide machine learning solutions to the company. Requires skills in project management and working in teams. Proficiency in Machine Learning and Python. """)
+        #         st.markdown("""**(2) Machine Learning (General) |** Build ML models to provide solutions on business processes and/or customer relationships. Must be knowledegable in different tools and complex analysis. Willing to work in teams. """)
+        #         st.markdown("""**(3) Data Science as a Service (DSaaS) |** Skilled in drawing insights from advanced analytics for client needs. Knowledgeable in statistics and insighting.""")
+        #     with c1:
+        #         image = Image.open('img/man2.png')
+        #         st.image(image)
 
 
 elif my_page == 'Job Market Overview':
